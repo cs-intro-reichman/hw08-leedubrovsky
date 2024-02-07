@@ -8,7 +8,7 @@ public class PlayListTester {
             return;
         }
 
-        // Reset playlist for each run to ensure a clean state
+        // Reset playlist for each run to ensure a clean state!
         resetPlaylist();
 
         String functionName = args[0];
