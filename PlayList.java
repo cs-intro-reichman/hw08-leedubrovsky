@@ -147,11 +147,13 @@ class PlayList {
      *  If such a track is not found, or the list is empty, or the given index
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) {
-        int index = this.indexOf(title);
-            if(this.getSize() != 0 && index >= 0 && index <= this.getSize()) 
-            this.remove(index);
-            
-        }
+        int i = indexOf(title);
+                if (i != -1 && i < this.getSize() && i >= 0 && this.getSize() !=0){
+                    remove(indexOf(title));
+                }
+        
+    }
+
     
 
     /** Removes the first track from this list. If the list is empty, does nothing. */
