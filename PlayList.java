@@ -35,13 +35,17 @@ class PlayList {
      *  If the list is full, does nothing and returns false.
      *  Otherwise, appends the track and returns true. */
     public boolean add(Track track) {
-        if (this.size == this.maxSize) 
+        //// replace the following statement with your code
+        if ( this.size == this.maxSize ){
             return false;
-      this.tracks[size] = track;
-      this.size = size+1;  
-    
-        return true;
+        }
+        this.tracks[size] = track;
+        this.size = size++;
+        
+        return true; 
     }
+
+    
 
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
     //// For an efficient implementation, use StringBuilder.
