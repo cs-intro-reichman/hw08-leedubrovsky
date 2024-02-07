@@ -109,7 +109,7 @@ class PlayList {
             this.tracks[j] = this.tracks[j-1];
         }
         this.tracks[i] = track;
-        this.size = size +1;
+        this.size++;
 
             
          
@@ -117,6 +117,7 @@ class PlayList {
         return true;
     }
     return false;
+
 
 
     }  
@@ -127,18 +128,20 @@ class PlayList {
      *  If the list is empty, or the given index is negative or too big for this list, 
      *  does nothing and returns -1. */
     public void remove(int i) {
-        if (this.getSize() != 0 && i >= 0 && i < this.getSize()) {
-            if (i == this.size - 1)
+        if (this.getSize() != 0 && i >= 0 && i < this.getSize()){
+            if (i == this.size - 1){
                 this.removeLast();
-            else {
-                for (int j = i; j < this.getSize(); j++) {
-                    this.tracks[j] = this.tracks[j + 1];
+    
+            }else if (i>= 1 && i < this.getSize()){
+                for (int j = i; j > this.getSize(); j++){
+                    this.tracks[j] = this.tracks[j+1];
                 }
-                this.size = size - 1;
+                this.size--;
+    
             }
-
+            }
         }
-    }
+    
 
     /** Removes the first track that has the given title from this list.
      *  If such a track is not found, or the list is empty, or the given index
