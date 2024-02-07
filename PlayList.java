@@ -35,29 +35,27 @@ class PlayList {
      *  If the list is full, does nothing and returns false.
      *  Otherwise, appends the track and returns true. */
     public boolean add(Track track) {
-        //// replace the following statement with your code
-        if ( this.size == this.maxSize ){
+        if (this.size == this.maxSize) 
             return false;
-        }
-        this.tracks[size] = track;
-        this.size = size++;
-        
-        return true; 
-    }
-
+      this.tracks[size] = track;
+      this.size = size+1;  
     
+        return true;
+    }
 
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
         String trackInSeparateLine = "";
-        for (int i = 0; i < this.size; i++) {
-            trackInSeparateLine += tracks[i];
-            trackInSeparateLine += "" + tracks[i] + "/n" ;    
-                
+        //Track [] trackInSeparateLines = new Track[size];
+        for (int i = 0; i < this.getSize(); i++){
+            //trackInSeparateLines[i] = tracks[i];
+        trackInSeparateLine += ""+ tracks[i] +"/n";
+
         }
         return trackInSeparateLine;
     }
+
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
